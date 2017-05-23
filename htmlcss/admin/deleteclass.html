@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../styles/main.css">
+	<title>Notiz löschen - Klassenbuch</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<h1>Klasse löschen</h1>
+			<p>Möchten Sie die Klasse 5A wirklich löschen? Warnung: Alle Schülerzuordnungen gehen dadurch verloren. Bitte geben Sie den Klassennamen in das Textfeld nochmals ein.</p>
+			<form action="klassen.html">
+				<div class="form-row">
+					<label for="classname">
+						Klassenname eingeben
+					</label>
+					<input type="text" id="classname" required>
+				</div>
+				<button type="submit">Löschen</button>
+				<a href="klassen.html" class="button">Zurück</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

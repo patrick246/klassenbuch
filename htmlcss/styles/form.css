@@ -1,0 +1,82 @@
+.form-row
+{
+    margin: 8px 0;
+}
+
+.form-row label
+{
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-row input
+{
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 4px;
+    width: 380px;
+}
+
+.form-row input:focus
+{
+    border: 1px solid #1fb2ff;
+}
+
+button, .button
+{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 4px 16px;
+    color: #333;
+    background-color: #eeeeee;
+    cursor: pointer;
+    font-size: 10pt;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    margin: 8px;
+}
+
+select
+{
+    display: block;
+    border: 1px solid #bbb;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    padding: 4px;
+    background-image: url('../img/dropdown.min.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 32px 32px;
+}
+
+.form-row p
+{
+    margin: 0 8px;
+}
+
+.form-row select
+{
+    width: 300px;
+}
+
+.form-row-inline select
+{
+    display: inline;
+}
+
+.form-row button, .form-row .button
+{
+    margin: 0;
+}
+
+.form-row textarea
+{
+    display: block;
+}

@@ -1,4 +1,6 @@
 @import "font-roboto.css";
+@import "form.css";
+@import "navbar.css";
 
 body
 {
@@ -29,140 +31,6 @@ h1,h2,h3,h4,h5,h6
     border-radius: 5px;
 }
 
-.form-row label
-{
-    display: inline-block;
-    width: 100px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.form-row input
-{
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    padding: 4px;
-    width: 380px;
-}
-
-.form-row input:focus
-{
-    border: 1px solid #1fb2ff;
-}
-
-button, .button
-{
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 4px 16px;
-    color: #333;
-    background-color: #eeeeee;
-    cursor: pointer;
-    font-size: 10pt;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-decoration: none;
-    margin: 8px;
-}
-
-.navbar
-{
-    background-color: rgba(0,0,0,.75);
-    color: white;
-}
-
-.navbar .container
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: baseline;
-}
-
-.navbar .navbar-brand
-{
-    font-weight: bold;
-    margin-right: 15px;
-    width: 100px;
-}
-
-.navbar.navbar-nobrand ul
-{
-    margin-left: 115px;
-}
-
-.navbar ul
-{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.navbar ul ul
-{
-    display: flex;
-    flex-direction: column;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .25s;
-
-    position: absolute;
-    background-color: rgba(0,0,0,.75);
-    width: 200px;
-    padding: 15px 10px;
-    margin: 20px 0 0 -15px;
-}
-
-.navbar ul li:hover ul
-{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity .25s;
-}
-
-.navbar ul li:hover ul li.active
-{
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-.navbar ul li ul li
-{
-    padding: 10px 5px;
-    transition: padding .25s;
-}
-
-.navbar ul li ul li:hover
-{
-    padding: 10px 10px;
-}
-
-.navbar ul li
-{
-    padding: 20px 15px;
-}
-
-.navbar-small ul li
-{
-    padding: 5px 15px;
-}
-
-.navbar ul li.active
-{
-    background-color: rgba(0,0,0,.4)
-}
-
-.navbar a
-{
-    color: white;
-    text-decoration: none;
-}
-
 .card
 {
     padding: 16px;
@@ -182,21 +50,6 @@ button, .button
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-select
-{
-    display: block;
-    border: 1px solid #bbb;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 5px;
-    padding: 4px;
-    background-image: url('../img/dropdown.min.svg');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 32px 32px;
 }
 
 .class-date-selector select
@@ -304,19 +157,9 @@ select
     color: #999;
 }
 
-.form-row select
-{
-    width: 300px;
-}
-
 .addnote .form-row
 {
     margin: 16px 0;
-}
-
-.form-row p
-{
-    margin: 0 8px;
 }
 
 .addnote .form-row textarea
@@ -344,4 +187,16 @@ select
 {
     display: block;
     resize: vertical;
+}
+
+.class-actions
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.teacher-actions
+{
+    display: flex;
+    flex-direction: row;
 }

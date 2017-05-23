@@ -28,9 +28,14 @@
     <h1>Lehrer</h1>
     <div class="card">
         <h2>Lehrerübersicht</h2>
+        <div class="teacher-actions">
+            <a href="editteacher.html" class="button">Lehrer bearbeiten</a>
+            <a href="deleteteacher.html" class="button">Lehrer löschen</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Rolle</th>
@@ -38,16 +43,19 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><input type="radio" name="teacher-selection"></td>
                     <td>Administrator</td>
                     <td>webmaster@schule.example.com</td>
                     <td>Administrator</td>
                 </tr>
                 <tr>
+                    <td><input type="radio" name="teacher-selection"></td>
                     <td>Martin Meier</td>
                     <td>martin.meier@schule.example.com</td>
                     <td>Lehrer</td>
                 </tr>
                 <tr>
+                    <td><input type="radio" name="teacher-selection"></td>
                     <td>Stephan Gerber</td>
                     <td>stephan.gerber@schule.example.com</td>
                     <td>Rektor</td>

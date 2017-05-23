@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../styles/main.css">
+	<title>Klasse bearbeiten - Administration - Klassenbuch</title>
+</head>
+<body>
+<nav class="navbar">
+	<div class="container">
+		<div class="navbar-brand">
+			Klassenbuch
+		</div>
+		<ul>
+			<li><a href="../klassenbuch.html">Klassenbuch</a></li>
+			<li class="active">
+				<a href="#">Administration</a>
+				<ul>
+					<li><a href="index.html">Lehrer</a></li>
+					<li class="active"><a href="klassen.html">Klassen</a></li>
+					<li><a href="schueler.html">Schüler</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<h1>Klasse bearbeiten</h1>
+	<form action="klassen.html" method="get">
+		<div class="form-row">
+			<label for="form">
+				Stufe
+			</label>
+			<select id="form">
+				<option selected>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="suffix">
+				Suffix
+			</label>
+			<select id="suffix">
+				<option selected>A</option>
+				<option>B</option>
+				<option>C</option>
+				<option>D</option>
+				<option>E</option>
+				<option>F</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="name">
+				Klassenname
+			</label>
+			<p id="name">5A</p>
+		</div>
+		<div class="form-row">
+			<label for="notes">
+				Bemerkungen
+			</label>
+			<textarea id="notes" rows="3" cols="35">-</textarea>
+		</div>
+		<button type="submit">Klasse bearbeiten</button>
+	</form>
+</div>
+</body>
+</html>

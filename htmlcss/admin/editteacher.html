@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../styles/main.css">
+	<title>Lehrer bearbeiten - Administration - Klassenbuch</title>
+</head>
+<body>
+<nav class="navbar">
+	<div class="container">
+		<div class="navbar-brand">
+			Klassenbuch
+		</div>
+		<ul>
+			<li><a href="../klassenbuch.html">Klassenbuch</a></li>
+			<li class="active">
+				<a href="#">Administration</a>
+				<ul>
+					<li><a href="index.html">Lehrer</a></li>
+					<li><a href="klassen.html">Klassen</a></li>
+					<li><a href="schueler.html">Schüler</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<h1>Klasse bearbeiten</h1>
+	<form action="index.html" method="get">
+		<div class="form-row">
+			<label for="name">
+				Name
+			</label>
+			<input type="text" id="name" required placeholder="Max Mustermann" value="Martin Meier">
+		</div>
+		<div class="form-row">
+			<label for="email">
+				Email
+			</label>
+			<input type="email" id="email" required placeholder="max.mustermann@schule.example.com" value="martin.meier@schule.example.com">
+		</div>
+		<div class="form-row form-row-inline">
+			<label for="role">
+				Rolle
+			</label>
+			<select id="role">
+				<option selected>Lehrer</option>
+				<option>Referendar</option>
+				<option>Rektor</option>
+				<option>Administrator</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="password">
+				Passwort
+			</label>
+			<a href="index.html" class="button" id="password">Passwort neu generieren und verschicken</a>
+		</div>
+		<button type="submit">Lehrer anlegen</button>
+	</form>
+</div>
+</body>
+</html>
