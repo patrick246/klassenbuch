@@ -34,6 +34,7 @@ h1,h2,h3,h4,h5,h6
     display: inline-block;
     width: 100px;
     margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .form-row input
@@ -49,13 +50,20 @@ h1,h2,h3,h4,h5,h6
     border: 1px solid #1fb2ff;
 }
 
-button
+button, .button
 {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 4px 16px;
-    color: #555;
+    color: #333;
     background-color: #eeeeee;
+    cursor: pointer;
+    font-size: 10pt;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
 }
 
 .navbar
@@ -175,7 +183,7 @@ button
     justify-content: space-around;
 }
 
-.class-date-selector select
+select
 {
     display: block;
     border: 1px solid #bbb;
@@ -184,11 +192,15 @@ button
     appearance: none;
     border-radius: 5px;
     padding: 4px;
-    width: 380px;
     background-image: url('../img/dropdown.min.svg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 32px 32px;
+}
+
+.class-date-selector select
+{
+    width: 380px;
 }
 
 .datepicker tbody td
@@ -196,6 +208,7 @@ button
     padding: 4px;
     text-align: right;
     cursor: pointer;
+
 }
 
 .datepicker td:nth-of-type(6),
@@ -246,4 +259,62 @@ button
     to {
         background-position: -20px 0;
     }
+}
+
+.table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead tr
+{
+    border-bottom: 1px solid #555;
+    text-align: left;
+}
+
+.table thead th
+{
+    font-size: 16pt;
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: 300;
+    margin: 0 8px;
+}
+
+.table tbody td
+{
+    padding: 5px;
+}
+
+.table tbody tr:nth-of-type(2n)
+{
+    background-color: rgba(0,0,0,.1);
+}
+
+.notes-action
+{
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-row select
+{
+    width: 300px;
+}
+
+.addnote .form-row
+{
+    margin: 16px 0;
+}
+
+.form-row p
+{
+    margin: 0 8px;
+}
+
+.addnote .form-row textarea
+{
+    display: block;
+    resize: vertical;
 }
