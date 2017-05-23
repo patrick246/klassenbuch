@@ -64,6 +64,7 @@ button, .button
     -ms-user-select: none;
     user-select: none;
     text-decoration: none;
+    margin: 8px;
 }
 
 .navbar
@@ -296,6 +297,11 @@ select
     margin: 16px;
     display: flex;
     flex-direction: row;
+}
+
+.notes table tr.deleted
+{
+    color: #999;
 }
 
 .form-row select

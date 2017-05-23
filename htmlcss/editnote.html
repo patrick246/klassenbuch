@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/main.css">
+	<title>Bemerkung/Eintrag hinzufügen - Klassenbuch</title>
+</head>
+<body>
+<nav class="navbar">
+	<div class="container">
+		<div class="navbar-brand">
+			Klassenbuch
+		</div>
+		<ul>
+			<li><a href="klassenbuch.html">Klassenbuch</a></li>
+			<li>
+				<a href="admin/index.html">Administration</a>
+				<ul>
+					<li><a href="admin/index.html">Lehrer</a></li>
+					<li><a href="admin/klassen.html">Klassen</a></li>
+					<li><a href="admin/schueler.html">Schüler</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<h1>Bemerkung/Eintrag bearbeiten</h1>
+	<p>Alle Änderungen werden protokolliert</p>
+	<form action="klassenbuch.html" method="get" class="addnote">
+		<div class="form-row">
+			<label for="class">
+				Klasse
+			</label>
+			<select id="class">
+				<option selected>5A</option>
+				<option>5B</option>
+				<option>6A</option>
+				<option>6B</option>
+				<option>7A</option>
+				<option>7B</option>
+				<option>8A</option>
+				<option>8B</option>
+				<option>9A</option>
+				<option>9B</option>
+				<option>10A</option>
+				<option>10B</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="student">
+				Schüler
+			</label>
+			<select id="student">
+				<option selected>Max Müller</option>
+				<option>Max Schneider</option>
+				<option>Sebastian Huber</option>
+				<option>Sven Schuster</option>
+				<option>Yvonne Keller</option>
+				<option>Patrick Hermann</option>
+				<option>Martina Wächter</option>
+				<option>Lena Hirsch</option>
+				<option>Petra Eberhart</option>
+				<option>Lucas Müller</option>
+				<option>Tatiana Bykova</option>
+				<option>Stefanie Wagner</option>
+				<option>Daniela Hofmann</option>
+				<option>Uta Krüger</option>
+				<option>Karin Schmitz</option>
+				<option>Janina BAch</option>
+				<option>Dirk Mauer</option>
+				<option>Marco Jäger</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="lecture">
+				Stunde
+			</label>
+			<p id="lecture">1.-2. Stunde</p>
+		</div>
+		<div class="form-row">
+			<label for="type">
+				Typ
+			</label>
+			<select id="type">
+				<option selected>Bemerkung</option>
+				<option>Eintrag</option>
+				<option>Notiz</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="reason">
+				Grund
+			</label>
+			<textarea id="reason" rows="7" cols="70">Max hat mehrere Male den Unterricht gestört</textarea>
+		</div>
+		<button type="submit">Notiz bearbeiten</button>
+	</form>
+	<h1>Bearbeitungshistorie</h1>
+	<div class="card">
+		<h2>Bearbeitung #1</h2>
+		<div>
+			<h3>Schüler</h3>
+			<p>Max Müller</p>
+			<h3>Stunde</h3>
+			<p>1.-2. Stunde</p>
+			<h3>Typ</h3>
+			<p>Bemerkung</p>
+			<h3>Lehrer</h3>
+			<p>Martin Meier</p>
+			<h3>Grund</h3>
+			<p>Max hat mehrere Mle den Unterricht gestört</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
