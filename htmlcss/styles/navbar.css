@@ -93,3 +93,25 @@
     color: white;
     text-decoration: none;
 }
+
+.navbar .spacer
+{
+    flex-grow: 1;
+}
+
+.navbar .user div:first-child
+{
+    height: 60px;
+}
+
+
+.navbar .user .dropdown
+{
+    position: absolute;
+    opacity: 0;
+}
+
+.navbar .user:hover .dropdown
+{
+    opacity: 1;
+}

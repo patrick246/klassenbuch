@@ -10,8 +10,17 @@
 		<div class="card">
 			<h1>Notiz löschen</h1>
 			<p>Möchten Sie wirklich die Bemerkung als gelöscht markieren? Die Bemerkung wird für den Rektor und Klassenlehrer weiterhin sichbar bleiben, aber als gelöscht angezeigt werden.</p>
-			<a href="klassenbuch.html" class="button">Löschen</a>
-			<a href="klassenbuch.html" class="button">Zurück</a>
+			<form action="klassenbuch.html" method="get">
+				<div class="form-row">
+					<label for="reason">
+						Löschgrund
+					</label>
+					<textarea rows="5" id="reason"></textarea>
+				</div>
+				<button href="klassenbuch.html" type="submit">Löschen</button>
+				<a href="klassenbuch.html" class="button">Zurück</a>
+			</form>
+
 		</div>
 	</div>
 </body>

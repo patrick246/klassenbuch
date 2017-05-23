@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/main.css">
+	<title>Profil - Klassenbuch</title>
+</head>
+<body>
+<nav class="navbar">
+	<div class="container">
+		<div class="navbar-brand">
+			Klassenbuch
+		</div>
+		<ul>
+			<li><a href="klassenbuch.html">Klassenbuch</a></li>
+			<li>
+				<a href="admin/index.html">Administration</a>
+				<ul>
+					<li><a href="admin/index.html">Lehrer</a></li>
+					<li><a href="admin/klassen.html">Klassen</a></li>
+					<li><a href="admin/schueler.html">Schüler</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="spacer"></div>
+		<ul>
+			<li class="active">
+				<a href="#">Martin Meier</a>
+				<ul>
+					<li class="active"><a href="profile.html">Benutzerprofil</a></li>
+					<li><a href="index.html">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<div class="card">
+		<h1>Martin Meier</h1>
+		<h2>Passwort ändern</h2>
+		<form>
+			<div class="form-row">
+				<label for="password-old">
+					Altes Passwort
+				</label>
+				<input type="password" id="password-old">
+			</div>
+			<div class="form-row">
+				<label for="password">
+					Passwort
+				</label>
+				<input type="password" id="password">
+			</div>
+			<div class="form-row">
+				<label for="password-repeat">
+					Passwort wdh.
+				</label>
+				<input type="password" id="password-repeat">
+			</div>
+			<button type="submit">Passwort ändern</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>
