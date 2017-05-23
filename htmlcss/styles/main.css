@@ -153,3 +153,97 @@ button
     color: white;
     text-decoration: none;
 }
+
+.card
+{
+    padding: 16px;
+    /*box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);*/
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 16px 0;
+}
+
+.card h2
+{
+    margin: 5px 0;
+}
+
+.class-date-selector
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.class-date-selector select
+{
+    display: block;
+    border: 1px solid #bbb;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    padding: 4px;
+    width: 380px;
+    background-image: url('../img/dropdown.min.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 32px 32px;
+}
+
+.datepicker tbody td
+{
+    padding: 4px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.datepicker td:nth-of-type(6),
+.datepicker td:nth-of-type(7),
+.datepicker th:nth-of-type(6),
+.datepicker th:nth-of-type(7),
+.datepicker .date-next,
+.datepicker .date-prev
+{
+    color: #bbbbbb;
+}
+
+.pause-countdown
+{
+    width: 100%;
+    height: 16px;
+    border: 1px solid #bbb;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.pause-countdown div
+{
+    width: 65%;
+    height: 16px;
+    background: #666 linear-gradient(
+            45deg,
+            #555 25%,
+            transparent 25%,
+            transparent 50%,
+            #555 50%,
+            #555 75%,
+            transparent 75%,
+            transparent
+    );
+    background-size: 20px 20px;
+    border: 0px solid white;
+    animation: progress-stripes;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes progress-stripes {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: -20px 0;
+    }
+}
