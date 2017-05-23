@@ -1,33 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../styles/main.css">
-	<title>Noten - Klassenbuch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Noten - Klassenbuch</title>
 </head>
 <body>
 <nav class="navbar">
-	<div class="container">
-		<div class="navbar-brand">
-			Klassenbuch
-		</div>
-		<ul>
-			<li><a href="krankmeldung.html">Krankmeldung</a></li>
-			<li><a href="calendar.html">Kalender</a></li>
-			<li class="active"><a href="marks.html">Noten</a></li>
-		</ul>
-		<div class="spacer"></div>
-		<ul>
-			<li>
-				<a href="#">Max Müller [S]</a>
-				<ul>
-					<li><a href="index.html">Benutzerprofil</a></li>
-					<li><a href="index.html">Logout</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+    <div class="container">
+        <div class="navbar-brand">
+            Klassenbuch
+        </div>
+        <ul>
+            <li><a href="krankmeldung.html">Krankmeldung</a></li>
+            <li><a href="calendar.html">Kalender</a></li>
+            <li class="active"><a href="marks.html">Noten</a></li>
+        </ul>
+        <div class="spacer"></div>
+        <ul>
+            <li>
+                <a href="#">Max Müller [S]</a>
+                <ul>
+                    <li><a href="index.html">Benutzerprofil</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<form>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Fach</th>
+            <th>Noten</th>
+            <th>Klausuren</th>
+            <th>Gesamt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Mathematik</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                1,83
+            </td>
+        </tr>
+        <tr>
+            <td>Deutsch</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                3,0
+            </td>
+        </tr>
+        <tr>
+            <td>Englisch</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr>
+        <tr>
+            <td>Geschichte</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,375
+            </td>
+        </tr>
+        <tr>
+            <td>Physik</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr>
+        <tr>
+            <td>Biologie</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr>
+        <tr>
+            <td>Chemie</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Musik</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Kunst</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Sport</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Geographie</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Spanisch</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Informatik</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Sozialkunde</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Philosophie</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+            <td>Wahlpflicht</td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table rules="cols">
+                    <tr>
+                        <td >
+                            2
+                        </td>
+                        <td >
+                            4
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                2,33
+            </td>
+        </tr><tr>
+        </tbody>
+    </table>
+</form>
 
 </body>
 </html>
