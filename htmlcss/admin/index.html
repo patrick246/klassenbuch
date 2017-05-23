@@ -25,7 +25,73 @@
     </div>
 </nav>
 <div class="container">
-    <h1>Administration</h1>
+    <h1>Lehrer</h1>
+    <div class="card">
+        <h2>Lehrerübersicht</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Rolle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Administrator</td>
+                    <td>webmaster@schule.example.com</td>
+                    <td>Administrator</td>
+                </tr>
+                <tr>
+                    <td>Martin Meier</td>
+                    <td>martin.meier@schule.example.com</td>
+                    <td>Lehrer</td>
+                </tr>
+                <tr>
+                    <td>Stephan Gerber</td>
+                    <td>stephan.gerber@schule.example.com</td>
+                    <td>Rektor</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card addteacher">
+        <h2>Lehrer hinzufügen</h2>
+        <form action="index.html" method="get">
+            <div class="form-row">
+                <label for="name">
+                    Name
+                </label>
+                <input type="text" id="name" required placeholder="Max Mustermann">
+            </div>
+            <div class="form-row">
+                <label for="email">
+                    Email
+                </label>
+                <input type="email" id="email" required placeholder="max.mustermann@schule.example.com">
+            </div>
+            <div class="form-row">
+                <label for="role">
+                    Rolle
+                </label>
+                <select id="role">
+                    <option>Lehrer</option>
+                    <option>Referendar</option>
+                    <option>Rektor</option>
+                    <option>Administrator</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="password">
+                    Passwort
+                </label>
+                <p id="password">
+                    Das Passwort wird automatisch generiert und dem Lehrer per Mail zugeschickt.
+                </p>
+            </div>
+            <button type="submit">Lehrer anlegen</button>
+        </form>
+    </div>
 </div>
 
 </body>

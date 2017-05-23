@@ -324,3 +324,24 @@ select
     display: block;
     resize: vertical;
 }
+
+.addteacher select
+{
+    display: inline;
+    width: 390px;
+}
+
+.addteacher form p
+{
+    display: inline;
+    font-size: 10pt;
+    margin: 0;
+    width: 300px;
+    color: #777;
+}
+
+.addclass .form-row textarea
+{
+    display: block;
+    resize: vertical;
+}
