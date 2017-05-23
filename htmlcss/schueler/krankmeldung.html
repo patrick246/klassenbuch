@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../styles/main.css">
+	<title>Krankmeldung - Klassenbuch</title>
+</head>
+<body>
+<div class="container">
+	<div class="card">
+		<h1>Krankmeldung</h1>
+		<form action="krankmeldung-success.html" method="get">
+			<div class="form-row">
+				<label for="name">
+					Name
+				</label>
+				<p id="name">Max Müller</p>
+			</div>
+			<div class="form-row">
+				<label for="class">
+					Klasse
+				</label>
+				<p id="class">5A</p>
+			</div>
+			<div class="form-row form-row-block">
+				<label for="date-start">
+					Beginn Krankmeldung
+				</label>
+				<input type="date" id="date-start" placeholder="01.01.2000" required>
+			</div>
+			<div class="form-row form-row-block">
+				<label for="date-end">
+					Ende Krankmeldung
+				</label>
+				<input type="date" id="date-end" placeholder="01.01.2000" required>
+			</div>
+			<div class="form-row">
+				<label for="reason">
+					Grund
+				</label>
+				<textarea id="reason" rows="5" required></textarea>
+			</div>
+			<div class="form-row form-row-block">
+				<label for="sicknote">
+					Attest (unter 3 Tagen optional)
+				</label>
+				<input type="file" id="sicknote">
+			</div>
+			<button type="submit">Absenden</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

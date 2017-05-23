@@ -8,15 +8,33 @@
 <body>
 <div class="container">
 	<div class="login">
-		<h1>Login</h1>
+		<h1>Lehrer-Login</h1>
 		<form action="klassenbuch.html" method="get">
 			<div class="form-row">
 				<label for="email">Email</label>
-				<input type="email" id="email" name="email" placeholder="user@example.com" required>
+				<input type="email" id="email" name="email" placeholder="vorname.nachname@schule.example.com" required>
 			</div>
 			<div class="form-row">
 				<label for="password">Passwort</label>
-				<input type="password" id="password" name="password" placeholder="hunter2" required>
+				<input type="password" id="password" name="password" placeholder="Passwort Lehreraccount" required>
+			</div>
+			<button type="submit">Login</button>
+		</form>
+	</div>
+	<div class="login">
+		<h1>Schüler-Login</h1>
+		<form action="schueler/krankmeldung.html">
+			<div class="form-row">
+				<label for="email-student">
+					Schul-Email
+				</label>
+				<input type="email" id="email-student" placeholder="vorname.nachname@schueler.schule.example.com" required>
+			</div>
+			<div class="form-row">
+				<label for="password-student">
+					Passwort
+				</label>
+				<input type="password" id="password-student" placeholder="Passwort Schüleraccount" required>
 			</div>
 			<button type="submit">Login</button>
 		</form>

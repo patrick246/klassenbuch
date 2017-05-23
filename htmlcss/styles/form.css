@@ -19,6 +19,16 @@
     width: 370px;
 }
 
+.form-row-block input
+{
+    display: block;
+}
+
+.form-row-block label
+{
+    width: auto;
+}
+
 .form-row input:focus
 {
     border: 1px solid #1fb2ff;
@@ -80,4 +90,9 @@ select
 .form-row textarea
 {
     display: block;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    resize: vertical;
+    padding: 5px;
+    width: 370px;
 }
