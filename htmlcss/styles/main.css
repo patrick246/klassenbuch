@@ -75,6 +75,12 @@ h1,h2,h3,h4,h5,h6
     color: #bbbbbb;
 }
 
+.datepicker .active
+{
+    border: 1px solid #555555;
+    border-radius: 20px;
+}
+
 .pause-countdown
 {
     width: 100%;
@@ -189,13 +195,7 @@ h1,h2,h3,h4,h5,h6
     resize: vertical;
 }
 
-.class-actions
-{
-    display: flex;
-    flex-direction: row;
-}
-
-.teacher-actions
+.class-actions, .student-actions, .teacher-actions
 {
     display: flex;
     flex-direction: row;

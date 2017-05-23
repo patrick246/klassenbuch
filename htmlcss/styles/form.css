@@ -6,7 +6,7 @@
 .form-row label
 {
     display: inline-block;
-    width: 100px;
+    width: 110px;
     margin-bottom: 8px;
     font-weight: bold;
 }
@@ -16,7 +16,7 @@
     border: 1px solid #bbb;
     border-radius: 5px;
     padding: 4px;
-    width: 380px;
+    width: 370px;
 }
 
 .form-row input:focus
@@ -69,6 +69,7 @@ select
 .form-row-inline select
 {
     display: inline;
+    width: 380px;
 }
 
 .form-row button, .form-row .button
