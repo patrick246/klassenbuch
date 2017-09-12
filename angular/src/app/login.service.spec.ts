@@ -1,14 +1,23 @@
-import {TestBed, inject, async} from '@angular/core/testing';
-import 'rxjs/add/operator/catch';
+import {async, inject, TestBed} from "@angular/core/testing";
+import "rxjs/add/operator/catch";
 
-import {LoginService} from './login.service';
+import {LoginService} from "./login.service";
 
 describe('LoginService', () => {
+	let store = {};
+	beforeEach(() => {
+		store = {};
+		spyOn(window.localStorage, 'getItem').and.callFake((key) => store[key] || null);
+		spyOn(window.localStorage, 'setItem').and.callFake((key, value) => store[key] = value);
+		spyOn(window.localStorage, 'clear').and.callFake(() => store = {});
+	});
+
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			providers: [LoginService]
 		});
 	});
+
 
 	it('should be injected', inject([LoginService], (service: LoginService) => {
 		expect(service).toBeTruthy();
@@ -31,7 +40,8 @@ describe('LoginService', () => {
 	it('shouldn\'t login with false credentials', async(inject([LoginService], (service: LoginService) => {
 		expect(service.isLoggedIn()).toBeFalsy();
 		service.login('admin', 'test').subscribe(
-			user => {},
+			user => {
+			},
 			err => {
 				expect(err.message).toBe('User/Password combination not found');
 			}
