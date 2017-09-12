@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 import {User} from "./user";
 import {Observable} from "rxjs/Observable";
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
+import "rxjs/add/observable/of";
+import "rxjs/add/observable/throw";
 
 @Injectable()
 export class LoginService {
@@ -24,7 +24,7 @@ export class LoginService {
 		} else {
 			localStorage.setItem('klassenbuch_users', JSON.stringify(this.userDb));
 		}
-		
+
 		let loggedIn = localStorage.getItem('klassenbuch_login');
 		if(loggedIn !== null) {
 			this.loggedIn = JSON.parse(loggedIn);
@@ -39,8 +39,9 @@ export class LoginService {
 
 	public login(username: string, password: string): Observable<User> {
 		let user = this.userDb.find(user => user.username === username);
-		if(user !== null && user.password === password) {
+		if (user && user.password === password) {
 			this.loggedIn = true;
+			localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));
 			return Observable.of(user);
 		}
 		return Observable.throw(new Error('User/Password combination not found'));
