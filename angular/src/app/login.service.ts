@@ -16,6 +16,7 @@ export class LoginService {
 	];
 
 	private loggedIn: boolean = false;
+	private currentUser: User = null;
 
 	constructor() {
 		let users = localStorage.getItem('klassenbuch_users');
@@ -31,19 +32,34 @@ export class LoginService {
 		} else {
 			localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));
 		}
+
+		let currentUser = localStorage.getItem('klassenbuch_login_currentUser');
+		if (currentUser !== null) {
+			this.currentUser = JSON.parse(currentUser);
+		}
 	}
 
 	public isLoggedIn(): boolean {
 		return this.loggedIn;
 	}
 
+	public getCurrentUser(): User {
+		return this.currentUser;
+	}
+
 	public login(username: string, password: string): Observable<User> {
 		let user = this.userDb.find(user => user.username === username);
 		if (user && user.password === password) {
 			this.loggedIn = true;
-			localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));
+			this.currentUser = user;
+			this.save();
 			return Observable.of(user);
 		}
 		return Observable.throw(new Error('User/Password combination not found'));
+	}
+
+	private save(): void {
+		localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));
+		localStorage.setItem('klassenbuch_login_currentUser', JSON.stringify(this.currentUser));
 	}
 }
