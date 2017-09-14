@@ -9,12 +9,14 @@ import {LoginService} from "app/login.service";
 import {LoginComponent} from "./login/login.component";
 import {LoginGuard} from "./login/login.guard";
 import {KlassenbuchComponent} from "./klassenbuch/klassenbuch.component";
+import {KlassenListeComponent} from "./klassenbuch/klassen-liste/klassen-liste.component";
 
 @NgModule({
   declarations: [
 	  AppComponent,
 	  LoginComponent,
-	  KlassenbuchComponent
+	  KlassenbuchComponent,
+	  KlassenListeComponent
   ],
   imports: [
     BrowserModule,
