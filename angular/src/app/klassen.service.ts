@@ -147,7 +147,15 @@ export class KlassenService {
 			this.save();
 			return Observable.of(newElem);
 		}
-		return Observable.throw("Neue Klasse existiert bereits");
+		return Observable.throw(new Error("Es existiert bereits eine Klasse mit diesen Eigenschaften"));
+	}
+
+	public getKlasse(stufe: number, name: string): Observable<Klasse> {
+		let klasse = this.klassenDb.find(k => k.name === name && k.stufe === stufe);
+		if (!klasse) {
+			return Observable.throw(new Error('Klasse not found'));
+		}
+		return Observable.of({stufe: klasse.stufe, name: klasse.name});
 	}
 
 	private save() {
