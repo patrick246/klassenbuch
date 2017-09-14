@@ -11,13 +11,17 @@ import {LoginGuard} from "./login/login.guard";
 import {KlassenbuchComponent} from "./klassenbuch/klassenbuch.component";
 import {KlassenListeComponent} from "./klassenbuch/klassen-liste/klassen-liste.component";
 import {KlassenService} from "./klassen.service";
+import {KlassenEditComponent} from "./klassenbuch/klassen-edit/klassen-edit.component";
+import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.component";
 
 @NgModule({
   declarations: [
 	  AppComponent,
 	  LoginComponent,
 	  KlassenbuchComponent,
-	  KlassenListeComponent
+	  KlassenListeComponent,
+	  KlassenEditComponent,
+	  KlassenNewComponent
   ],
   imports: [
     BrowserModule,

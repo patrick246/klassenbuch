@@ -15,7 +15,12 @@ export class KlassenListeComponent implements OnInit {
 
 	ngOnInit() {
 		this.klassenService.getKlassen().subscribe(klassen => {
-			this.klassen = klassen;
+			this.klassen = klassen.sort((klasse1: Klasse, klasse2: Klasse): number => {
+				if (klasse1.stufe === klasse2.stufe) {
+					return klasse1.name.localeCompare(klasse2.name);
+				}
+				return klasse1.stufe - klasse2.stufe;
+			});
 		})
 	}
 
