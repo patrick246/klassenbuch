@@ -58,6 +58,12 @@ export class LoginService {
 		return Observable.throw(new Error('User/Password combination not found'));
 	}
 
+	public logout(): void {
+		this.currentUser = null;
+		this.loggedIn = false;
+		this.save();
+	}
+
 	private save(): void {
 		localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));
 		localStorage.setItem('klassenbuch_login_currentUser', JSON.stringify(this.currentUser));
