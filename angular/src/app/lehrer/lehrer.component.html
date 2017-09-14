@@ -1,0 +1,20 @@
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>Nachname</th>
+      <th>Vorname</th>
+      <th>Email</th>
+      <th>Rolle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let lehrer of lehrers">
+      <td>{{lehrer.lastname}}</td>
+      <td>{{lehrer.firstname}}</td>
+      <td>{{lehrer.mail}}</td>
+      <td>{{lehrer.role}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

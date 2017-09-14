@@ -1,23 +1,25 @@
 
 import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+import {lehrer} from "./lehrer";
 @Injectable()
 export class LehrerService{
-  firstName: string;
-  lastName: string;
-  mail: string;
-  role: string;
-  id: string;
 
-  getLehrer(id:string){
-    return JSON.parse(localStorage.getItem(id));
+  lehrerDb: lehrer[] = [];
+
+  public getLehrer(): Observable<lehrer[]>{
+    this.lehrerDb =JSON.parse(localStorage.getItem('lehrer'));
+    return Observable.of(this.lehrerDb);
   }
 
-  setLehrer(id: string, name1: string, name2:string, mail1: string, role1: string){
-    let tmp = {firstName: name1, lastName: name2, mail: mail1, role: role1};
-    localStorage.setItem(id, JSON.stringify(tmp));
+  public setLehrer(Lehrer:lehrer): Observable<lehrer[]>{
+    this.lehrerDb.push(Lehrer);
+    localStorage.setItem('lehrer', JSON.stringify(this.lehrerDb));
+    return Observable.of(this.lehrerDb);
   }
 
-  removeLehrer(id: string){
-    localStorage.removeItem(id);
+  public removeLehrer(Lehrer: lehrer): Observable<lehrer[]>{
+    localStorage.removeItem(Lehrer.id);
+    return Observable.of(this.lehrerDb);
   }
 }
