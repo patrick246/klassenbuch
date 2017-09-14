@@ -8,12 +8,16 @@ import {Klasse} from "../../klasse";
 	styleUrls: ['./klassen-liste.component.css']
 })
 export class KlassenListeComponent implements OnInit {
-	private klassen: Klasse[];
+	klassen: Klasse[];
 
 	constructor(private klassenService: KlassenService) {
 	}
 
 	ngOnInit() {
+		this.loadKlassen();
+	}
+
+	private loadKlassen(): void {
 		this.klassenService.getKlassen().subscribe(klassen => {
 			this.klassen = klassen.sort((klasse1: Klasse, klasse2: Klasse): number => {
 				if (klasse1.stufe === klasse2.stufe) {
@@ -21,7 +25,16 @@ export class KlassenListeComponent implements OnInit {
 				}
 				return klasse1.stufe - klasse2.stufe;
 			});
-		})
+		});
+	}
+
+	public deleteKlasse(klasse: Klasse): void {
+		if (confirm(`Möchten Sie die Klasse ${klasse.stufe}${klasse.name} wirklich löschen?`) === false) return;
+		this.klassenService.deleteKlasse(klasse).subscribe(
+			() => {
+				this.loadKlassen();
+			}
+		)
 	}
 
 }
