@@ -1,5 +1,4 @@
-
-export interface lehrer{
+export interface Lehrer {
   firstName: string;
   lastName: string;
   mail: string;

@@ -1,15 +1,15 @@
 import {Component, OnInit} from "@angular/core";
 import {LehrerService} from "./lehrer.service";
-import {lehrer} from "./lehrer";
+import {Lehrer} from "./lehrer";
 
 @Component({
   selector: 'app-lehrer',
   templateUrl: './lehrer.component.html',
-  styles: ['htmlcss/styles/main.css']
+  styles: []
 })
 
 export class LehrerComponent implements OnInit {
-  private Lehrer: lehrer[];
+  private Lehrer: Lehrer[];
 
   constructor(private lehrerService: LehrerService) {
 
