@@ -1,5 +1,6 @@
 export interface Schueler {
-	name: string;
+	vorname: string;
 	nachname: string;
 	klasse: string;
+	id: string;
 }

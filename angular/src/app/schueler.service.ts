@@ -4,14 +4,16 @@ import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class SchuelerService {
-	private SchuelerDb: Schueler[] = [
+	private schuelerDb: Schueler[] = [
 		{
-			name: "Muster",
+			id: "0",
+			vorname: "Muster",
 			nachname: "Maxmann",
 			klasse: ""
 		},
 		{
-			name: "Max",
+			id: "1",
+			vorname: "Max",
 			nachname: "Mustermann",
 			klasse: ""
 		}
@@ -22,52 +24,48 @@ export class SchuelerService {
 
 	let schueler = localStorage.getItem('klassenbuch_schueler');
 	if (schueler !== null) {
-		this.SchuelerDb = JSON.parse(schueler);
+		this.schuelerDb = JSON.parse(schueler);
 	} else {
-		localStorage.setItem('klassenbuch_schueler', JSON.stringify(this.SchuelerDb));
+		localStorage.setItem('klassenbuch_schueler', JSON.stringify(this.schuelerDb));
 	}
 
 	}
 
 public getSchueler(): Observable<Schueler[]> {
-	return Observable.of(this.SchuelerDb);
+	return Observable.of(this.schuelerDb);
 }
 
 public addSchueler(schueler: Schueler): Observable<Schueler> {
-	if (this.SchuelerDb.find(s => s.name === schueler.name && s.nachname === schueler.nachname && s.klasse === schueler.klasse)) {
+	if (this.schuelerDb.find(s => s.id === schueler.id)) {
 	return Observable.throw(new Error('Dieser Schueler existiert bereits'));
 }
-this.SchuelerDb.push(schueler);
+this.schuelerDb.push(schueler);
 this.save();
 return Observable.of(schueler);
 }
 
 public deleteSchueler(schueler: Schueler): Observable<Schueler> {
-	let index = this.SchuelerDb.findIndex(s => s.name === schueler.name && s.nachname === schueler.nachname && s.klasse === schueler.klasse);
+	let index = this.schuelerDb.findIndex(s => s.id === schueler.id);
 if (index > -1) {
-	let schueler = this.SchuelerDb[index];
-	this.SchuelerDb.splice(index, 1);
+	let schueler = this.schuelerDb[index];
+	this.schuelerDb.splice(index, 1);
 	this.save();
 	return Observable.of(schueler);
 }
 return Observable.throw(new Error('Schueler not found'));
 }
 
-public updateSchueler(old: Schueler, newElem: Schueler): Observable<Schueler> {
-	let foundNew = this.SchuelerDb.findIndex(s => s.name === newElem.name && s.nachname === newElem.nachname && s.klasse === newElem.klasse);
-if (foundNew === -1) {
-	let oldIndex = this.SchuelerDb.findIndex(s => s.name === old.name && s.nachname === old.nachname);
-	if (oldIndex === -1) {
+public updateSchueler(schueler: Schueler): Observable<Schueler> {
+	let index = this.schuelerDb.findIndex(s => s.id === schueler.id);
+	if (index === -1) {
 		return Observable.throw("Schueler nicht gefunden");
 	}
-	this.SchuelerDb[oldIndex] = newElem;
+	this.schuelerDb[index] = schueler;
 	this.save();
-	return Observable.of(newElem);
-}
-return Observable.throw("Neuer Schueler existiert bereits");
+	return Observable.of(schueler);
 }
 
 private save() {
-	localStorage.setItem('klassenbuch_schueler', JSON.stringify(this.SchuelerDb));
+	localStorage.setItem('klassenbuch_schueler', JSON.stringify(this.schuelerDb));
 }
 }
