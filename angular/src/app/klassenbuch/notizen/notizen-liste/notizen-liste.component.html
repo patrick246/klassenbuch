@@ -7,6 +7,7 @@
 			<th>Schüler</th>
 			<th>Lehrer</th>
 			<th>Text</th>
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -15,6 +16,9 @@
 			<td>{{notiz.schueler.vorname}} {{notiz.schueler.nachname}}</td>
 			<td>{{notiz.lehrer.firstName}} {{notiz.lehrer.lastName}}</td>
 			<td>{{notiz.text}}</td>
+			<td>
+				<a class="btn btn-light" [routerLink]="[notiz.id]"><i class="fa fa-pencil"></i></a>
+			</td>
 		</tr>
 		</tbody>
 	</table>

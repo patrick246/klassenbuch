@@ -22,7 +22,6 @@ export class NotizenListeComponent implements OnInit {
 						this.schuelerService.getSingleSchueler(notiz.schueler).toPromise(),
 						this.lehrerService.getOneLehrer(notiz.lehrer).toPromise()
 					]);
-					console.log(results);
 					return {
 						id: notiz.id,
 						lehrer: results[1],
