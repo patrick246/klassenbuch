@@ -10,13 +10,31 @@ import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.compone
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
+<<<<<<< HEAD
 import {SchuelerListeComponent} from "./klassenbuch/schueler-liste/schueler-liste.component";
+=======
+import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
+import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
+import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
+>>>>>>> refs/remotes/origin/master
 
 const routes: Routes = [
 	{
 		path: '',
 		component: KlassenbuchComponent,
 		children: [
+			{
+				path: 'notes',
+				component: NotizenListeComponent
+			},
+			{
+				path: 'notes/new',
+				component: NotizenNewComponent
+			},
+			{
+				path: 'notes/:id',
+				component: NotizenEditComponent
+			},
 			{
 				path: 'class',
 				component: KlassenListeComponent
