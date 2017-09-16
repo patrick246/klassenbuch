@@ -20,14 +20,14 @@ export class LoginService {
 
 	constructor() {
 		let users = localStorage.getItem('klassenbuch_users');
-		if(users !== null) {
+		if (users !== null) {
 			this.userDb = JSON.parse(users);
 		} else {
 			localStorage.setItem('klassenbuch_users', JSON.stringify(this.userDb));
 		}
 
 		let loggedIn = localStorage.getItem('klassenbuch_login');
-		if(loggedIn !== null) {
+		if (loggedIn !== null) {
 			this.loggedIn = JSON.parse(loggedIn);
 		} else {
 			localStorage.setItem('klassenbuch_login', JSON.stringify(this.loggedIn));

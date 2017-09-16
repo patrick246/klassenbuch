@@ -13,27 +13,38 @@ import {KlassenListeComponent} from "./klassenbuch/klassen-liste/klassen-liste.c
 import {KlassenService} from "./klassen.service";
 import {KlassenEditComponent} from "./klassenbuch/klassen-edit/klassen-edit.component";
 import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.component";
+import {LehrerService} from "./lehrer/lehrer.service";
+import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
+import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
+import {LehrerComponent} from "./lehrer/lehrer.component";
+import {UUIDService} from "./uuid.service";
 
 @NgModule({
-  declarations: [
-	  AppComponent,
-	  LoginComponent,
-	  KlassenbuchComponent,
-	  KlassenListeComponent,
-	  KlassenEditComponent,
-	  KlassenNewComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [
-	  LoginService,
-	  LoginGuard,
-	  KlassenService
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		KlassenbuchComponent,
+		KlassenListeComponent,
+		KlassenEditComponent,
+		KlassenNewComponent,
+		LehrerComponent,
+		LehrerEditComponent,
+		LehrerNewComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		AppRoutingModule
+	],
+	providers: [
+		LoginService,
+		LoginGuard,
+		KlassenService,
+		LehrerService,
+		UUIDService
+	],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
