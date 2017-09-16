@@ -9,8 +9,6 @@ import {KlassenService} from "../../klassen.service";
 	styleUrls: ['./klassen-edit.component.css']
 })
 export class KlassenEditComponent implements OnInit {
-	private name: string;
-	private stufe: number;
 	private klasse: Klasse = null;
 	private error: string = null;
 
@@ -19,12 +17,9 @@ export class KlassenEditComponent implements OnInit {
 
 	ngOnInit() {
 		this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-			let stufe = Number.parseInt(paramMap.get('stufe'));
-			let name = paramMap.get('name');
-			this.klassenService.getKlasse(stufe, name).subscribe(klasse => {
-				this.klasse = klasse;
-				this.name = klasse.name;
-				this.stufe = klasse.stufe;
+			let id = paramMap.get('id');
+			this.klassenService.getKlasse(id).subscribe(klasse => {
+				this.klasse = {...klasse};
 			}, error => {
 				this.error = error.message;
 			});
@@ -32,8 +27,7 @@ export class KlassenEditComponent implements OnInit {
 	}
 
 	public save() {
-		console.log('save');
-		this.klassenService.updateKlasse({stufe: this.stufe, name: this.name}, this.klasse).subscribe(
+		this.klassenService.updateKlasse(this.klasse).subscribe(
 			() => {
 				this.router.navigate(['/class']);
 			},
