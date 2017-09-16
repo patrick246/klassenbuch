@@ -1,42 +1,73 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Lehrer} from "./lehrer";
+import {UUIDService} from "../uuid.service";
+
 @Injectable()
 export class LehrerService {
 
-  lehrerDb: Lehrer[] = [];
+	lehrerDb: Lehrer[];
 
-  public getLehrer(): Observable<Lehrer[]> {
-    this.lehrerDb = JSON.parse(localStorage.getItem('lehrer'));
-    return Observable.of(this.lehrerDb);
-  }
+	constructor(private uuidService: UUIDService) {
+		this.lehrerDb = [
+			{
+				id: uuidService.uuidv4(),
+				firstName: 'Test',
+				lastName: 'Lehrer',
+				mail: 'test.lehrer@schule.example.com',
+				role: ''
+			}
+		];
 
-  public getOneLehrer(mail: string): Observable<Lehrer> {
-	  let index = this.lehrerDb.findIndex(k => k.mail === mail);
-	  if (index > -1) {
-		  let lehrer: Lehrer = this.lehrerDb[index];
-		  return Observable.of(lehrer);
-	  }}
+		let lehrer = localStorage.getItem('klassenbuch_lehrer');
+		if (lehrer) {
+			this.lehrerDb = JSON.parse(lehrer);
+		} else {
+			localStorage.setItem('klassenbuch_lehrer', JSON.stringify(this.lehrerDb));
+		}
+	}
 
-  public addLehrer(Lehrer: Lehrer): Observable<Lehrer[]> {
-    this.lehrerDb.push(Lehrer);
-    localStorage.setItem('lehrer', JSON.stringify(this.lehrerDb));
-    return Observable.of(this.lehrerDb);
-  }
-
-	public updateLehrer(oldLehrer: Lehrer, newLehrer: Lehrer): Observable<Lehrer[]> {
-		this.removeLehrer(oldLehrer);
-		this.addLehrer(newLehrer);
+	public getLehrer(): Observable<Lehrer[]> {
 		return Observable.of(this.lehrerDb);
 	}
 
-  public removeLehrer(Lehrer: Lehrer): Observable<Lehrer[]> {
-    let index = this.lehrerDb.findIndex(k => k.mail === Lehrer.mail);
-    if (index > -1) {
-      let Lehrer = this.lehrerDb[index];
-      this.lehrerDb.splice(index, 1);
-      this.addLehrer;
-      return Observable.of(this.lehrerDb);
-    }
-  }
+	public getOneLehrer(id: string): Observable<Lehrer> {
+		let lehrer = this.lehrerDb.find(k => k.id === id);
+		if (lehrer) {
+			return Observable.of(lehrer);
+		}
+		return Observable.throw(new Error('Lehrer nicht gefunden'));
+	}
+
+	public addLehrer(lehrer: Lehrer): Observable<Lehrer[]> {
+		lehrer.id = this.uuidService.uuidv4();
+		this.lehrerDb.push(lehrer);
+		this.save();
+		return Observable.of(this.lehrerDb);
+	}
+
+	public updateLehrer(lehrer: Lehrer): Observable<Lehrer[]> {
+		let oldLehrer = this.lehrerDb.find(l => l.id === lehrer.id);
+		oldLehrer.firstName = lehrer.firstName;
+		oldLehrer.lastName = lehrer.lastName;
+		oldLehrer.mail = lehrer.mail;
+		oldLehrer.role = lehrer.role;
+		this.save();
+		return Observable.of(this.lehrerDb);
+	}
+
+	public removeLehrer(lehrer: Lehrer): Observable<Lehrer[]> {
+		let index = this.lehrerDb.findIndex(k => k.id === lehrer.id);
+		if (index > -1) {
+			let Lehrer = this.lehrerDb[index];
+			this.lehrerDb.splice(index, 1);
+			this.save();
+			return Observable.of(this.lehrerDb);
+		}
+		return Observable.throw(new Error('Lehrer nicht gefunden'));
+	}
+
+	private save() {
+		localStorage.setItem('klassenbuch_lehrer', JSON.stringify(this.lehrerDb));
+	}
 }

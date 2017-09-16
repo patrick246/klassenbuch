@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {LehrerComponent} from "./lehrer/lehrer.component";
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+
 import {LoginComponent} from "./login/login.component";
 import {LoginGuard} from "./login/login.guard";
 import {KlassenbuchComponent} from "./klassenbuch/klassenbuch.component";
@@ -9,13 +9,9 @@ import {KlassenEditComponent} from "./klassenbuch/klassen-edit/klassen-edit.comp
 import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.component";
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
-
+import {LehrerComponent} from "./lehrer/lehrer.component";
 
 const routes: Routes = [
-	{
-		path: '',
-		children: []
-	},
 	{
 		path: '',
 		component: KlassenbuchComponent,
@@ -25,25 +21,25 @@ const routes: Routes = [
 				component: KlassenListeComponent
 			},
 			{
-				path: 'lehrer',
-				component: LehrerComponent
-			},
-			{
-				path:'lehrer/lehrer-edit',
-				component: LehrerEditComponent
-			},
-			{
-				path:'lehrer/lehrer-new',
-				component: LehrerNewComponent
-			},
-			{
 				path: 'class/:stufe/:name',
 				component: KlassenEditComponent
 			},
 			{
 				path: 'class/new',
 				component: KlassenNewComponent
-			}
+			},
+			{
+				path: 'lehrer',
+				component: LehrerComponent
+			},
+			{
+				path: 'lehrer/new',
+				component: LehrerNewComponent
+			},
+			{
+				path: 'lehrer/:id',
+				component: LehrerEditComponent
+			},
 		],
 		canActivate: [LoginGuard]
 	},

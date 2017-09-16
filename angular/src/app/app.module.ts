@@ -1,18 +1,32 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {LehrerComponent} from "./lehrer/lehrer.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {AppComponent} from "./app.component";
+import {LoginService} from "app/login.service";
+import {LoginComponent} from "./login/login.component";
+import {LoginGuard} from "./login/login.guard";
+import {KlassenbuchComponent} from "./klassenbuch/klassenbuch.component";
+import {KlassenListeComponent} from "./klassenbuch/klassen-liste/klassen-liste.component";
+import {KlassenService} from "./klassen.service";
+import {KlassenEditComponent} from "./klassenbuch/klassen-edit/klassen-edit.component";
+import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.component";
 import {LehrerService} from "./lehrer/lehrer.service";
-import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
+import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
+import {LehrerComponent} from "./lehrer/lehrer.component";
+import {UUIDService} from "./uuid.service";
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		LoginComponent,
+		KlassenbuchComponent,
+		KlassenListeComponent,
+		KlassenEditComponent,
+		KlassenNewComponent,
 		LehrerComponent,
 		LehrerEditComponent,
 		LehrerNewComponent
@@ -24,7 +38,11 @@ import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 		AppRoutingModule
 	],
 	providers: [
-		LehrerService
+		LoginService,
+		LoginGuard,
+		KlassenService,
+		LehrerService,
+		UUIDService
 	],
 	bootstrap: [AppComponent]
 })

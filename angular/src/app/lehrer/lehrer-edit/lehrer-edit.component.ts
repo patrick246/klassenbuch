@@ -1,19 +1,13 @@
-import {OnInit, Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {LehrerService} from "../lehrer.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Lehrer} from "../lehrer";
 @Component({
 	selector: 'app-lehrer-edit',
-	templateUrl: './lehrer-edit.compinent.html',
-	styleUrls: []
+	templateUrl: './lehrer-edit.component.html',
 })
 
 export class LehrerEditComponent implements OnInit {
-
-	private firstName: string;
-	private lastName: string;
-	private mail: string;
-	private role: string;
 	private lehrer: Lehrer = null;
 
 	constructor(private activatedRoute: ActivatedRoute, private router: Router, private lehrerService: LehrerService) {
@@ -22,17 +16,10 @@ export class LehrerEditComponent implements OnInit {
 
 	ngOnInit() {
 		this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-			let firstName = paramMap.get('firstName');
-			let lastName = paramMap.get('lastName');
-			let mail = paramMap.get('mail');
-			let role = paramMap.get('role');
+			let id = paramMap.get('id');
 
-			this.lehrerService.getOneLehrer(mail).subscribe(lehrer => {
+			this.lehrerService.getOneLehrer(id).subscribe(lehrer => {
 				this.lehrer = lehrer;
-				this.firstName = lehrer.firstName;
-				this.lastName = lehrer.lastName;
-				this.mail = lehrer.mail;
-				this.role = lehrer.role;
 			})
 		})
 
@@ -40,14 +27,9 @@ export class LehrerEditComponent implements OnInit {
 
 	public save() {
 		console.log('save');
-		this.lehrerService.updateLehrer({
-			firstName: this.firstName,
-			lastName: this.lastName,
-			mail: this.mail,
-			role: this.role
-		}, this.lehrer).subscribe(
+		this.lehrerService.updateLehrer(this.lehrer).subscribe(
 			() => {
-				this.router.navigate(['/teacher'])
+				this.router.navigate(['/lehrer'])
 			}
 		)
 	}
