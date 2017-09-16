@@ -18,6 +18,9 @@ import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {UUIDService} from "./uuid.service";
+import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
+import {NotizenService} from "./klassenbuch/notizen/notizen.service";
+import {SchuelerService} from "./schueler.service";
 
 @NgModule({
 	declarations: [
@@ -29,7 +32,8 @@ import {UUIDService} from "./uuid.service";
 		KlassenNewComponent,
 		LehrerComponent,
 		LehrerEditComponent,
-		LehrerNewComponent
+		LehrerNewComponent,
+		NotizenListeComponent
 	],
 	imports: [
 		BrowserModule,
@@ -42,7 +46,9 @@ import {UUIDService} from "./uuid.service";
 		LoginGuard,
 		KlassenService,
 		LehrerService,
-		UUIDService
+		UUIDService,
+		NotizenService,
+		SchuelerService
 	],
 	bootstrap: [AppComponent]
 })
