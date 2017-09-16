@@ -11,7 +11,21 @@ export class NotizenService {
 	private notizenDb: Notiz[];
 
 	constructor(private uuidService: UUIDService) {
-		this.notizenDb = [];
+		this.notizenDb = [
+			{
+				id: uuidService.uuidv4(),
+				lehrer: '0ccd8313-7996-45f9-9572-5c0998a4171f',
+				schueler: '28cd6699-a56d-4017-b50e-cd823e63b5f6',
+				date: new Date(),
+				text: "Lorem Ipsum dolor sit amet..."
+			}, {
+				id: uuidService.uuidv4(),
+				lehrer: '0ccd8313-7996-45f9-9572-5c0998a4171f',
+				schueler: '28cd6699-a56d-4017-b50e-cd823e63b5f6',
+				date: new Date(),
+				text: "Lorem Ipsum dolor sit amet..."
+			}
+		];
 		let notizen = localStorage.getItem('klassenbuch_notizen');
 		if (notizen) {
 			this.notizenDb = JSON.parse(notizen, notizReviver);
