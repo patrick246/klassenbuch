@@ -11,6 +11,7 @@ import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
+import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 
 const routes: Routes = [
 	{
@@ -20,6 +21,10 @@ const routes: Routes = [
 			{
 				path: 'notes',
 				component: NotizenListeComponent
+			},
+			{
+				path: 'notes/new',
+				component: NotizenNewComponent
 			},
 			{
 				path: 'class',
