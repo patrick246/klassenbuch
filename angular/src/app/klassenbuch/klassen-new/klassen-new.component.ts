@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class KlassenNewComponent implements OnInit {
 	private klasse: Klasse = {
+		id: null,
 		stufe: null,
 		name: ""
 	};

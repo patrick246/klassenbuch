@@ -21,12 +21,12 @@ const routes: Routes = [
 				component: KlassenListeComponent
 			},
 			{
-				path: 'class/:stufe/:name',
-				component: KlassenEditComponent
-			},
-			{
 				path: 'class/new',
 				component: KlassenNewComponent
+			},
+			{
+				path: 'class/:id',
+				component: KlassenEditComponent
 			},
 			{
 				path: 'lehrer',
