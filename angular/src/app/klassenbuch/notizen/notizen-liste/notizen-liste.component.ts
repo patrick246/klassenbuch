@@ -10,11 +10,16 @@ import {LehrerService} from "../../../lehrer/lehrer.service";
 })
 export class NotizenListeComponent implements OnInit {
 	notizen: any;
+	error: string;
 
 	constructor(private notizenService: NotizenService, private schuelerService: SchuelerService, private lehrerService: LehrerService) {
 	}
 
 	ngOnInit() {
+		this.loadNotizen();
+	}
+
+	loadNotizen() {
 		this.notizenService.getNotizen().subscribe((notizen) => {
 			Promise.all(
 				notizen.map(async (notiz) => {
@@ -34,6 +39,20 @@ export class NotizenListeComponent implements OnInit {
 				this.notizen = result;
 			});
 		});
+	}
+
+	public deleteNotiz(notiz: any): void {
+		if (confirm(`Möchten Sie die Notiz für den Schüler ${notiz.schueler.vorname} wirklich löschen?`)) {
+			let origNotiz = {
+				...notiz,
+				schueler: notiz.schueler.id,
+				lehrer: notiz.lehrer.id
+			};
+			this.notizenService.deleteNotiz(origNotiz).subscribe(
+				() => this.loadNotizen(),
+				error => this.error = error.message
+			)
+		}
 	}
 
 }
