@@ -1,0 +1,23 @@
+<div class="container-fluid mt-3" *ngIf="error !== null">
+	<div class="alert alert-danger">
+		{{error}}
+	</div>
+</div>
+<div class="container-fluid mt-3" *ngIf="klasse !== null">
+	<form #classForm="ngForm">
+		<div class="form-group">
+			<label for="stufe">Klassenstufe</label>
+			<input type="number" class="form-control" id="stufe" [(ngModel)]="klasse.stufe" name="stufe" required
+			       min="1" step="1">
+		</div>
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" [(ngModel)]="klasse.name" name="name" required>
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-primary" (click)="save()" [disabled]="!classForm.valid">Speichern
+			</button>
+			<a class="btn btn-default btn-outline-primary" routerLink="/class">Abbrechen</a>
+		</div>
+	</form>
+</div>
