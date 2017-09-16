@@ -7,6 +7,8 @@ import {KlassenbuchComponent} from "./klassenbuch/klassenbuch.component";
 import {KlassenListeComponent} from "./klassenbuch/klassen-liste/klassen-liste.component";
 import {KlassenEditComponent} from "./klassenbuch/klassen-edit/klassen-edit.component";
 import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.component";
+import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
+import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 
 
 const routes: Routes = [
@@ -25,6 +27,14 @@ const routes: Routes = [
 			{
 				path: 'lehrer',
 				component: LehrerComponent
+			},
+			{
+				path:'lehrer/lehrer-edit',
+				component: LehrerEditComponent
+			},
+			{
+				path:'lehrer/lehrer-new',
+				component: LehrerNewComponent
 			},
 			{
 				path: 'class/:stufe/:name',

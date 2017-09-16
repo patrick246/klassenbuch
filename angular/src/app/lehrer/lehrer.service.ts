@@ -11,18 +11,31 @@ export class LehrerService {
     return Observable.of(this.lehrerDb);
   }
 
-  public setLehrer(Lehrer: Lehrer): Observable<Lehrer[]> {
+  public getOneLehrer(mail: string): Observable<Lehrer> {
+	  let index = this.lehrerDb.findIndex(k => k.mail === mail);
+	  if (index > -1) {
+		  let lehrer: Lehrer = this.lehrerDb[index];
+		  return Observable.of(lehrer);
+	  }}
+
+  public addLehrer(Lehrer: Lehrer): Observable<Lehrer[]> {
     this.lehrerDb.push(Lehrer);
     localStorage.setItem('lehrer', JSON.stringify(this.lehrerDb));
     return Observable.of(this.lehrerDb);
   }
+
+	public updateLehrer(oldLehrer: Lehrer, newLehrer: Lehrer): Observable<Lehrer[]> {
+		this.removeLehrer(oldLehrer);
+		this.addLehrer(newLehrer);
+		return Observable.of(this.lehrerDb);
+	}
 
   public removeLehrer(Lehrer: Lehrer): Observable<Lehrer[]> {
     let index = this.lehrerDb.findIndex(k => k.mail === Lehrer.mail);
     if (index > -1) {
       let Lehrer = this.lehrerDb[index];
       this.lehrerDb.splice(index, 1);
-      this.setLehrer;
+      this.addLehrer;
       return Observable.of(this.lehrerDb);
     }
   }
