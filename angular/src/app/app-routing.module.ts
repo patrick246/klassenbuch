@@ -10,6 +10,7 @@ import {KlassenNewComponent} from "./klassenbuch/klassen-new/klassen-new.compone
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
+import {SchuelerListeComponent} from "./klassenbuch/schueler-liste/schueler-liste.component";
 
 const routes: Routes = [
 	{
@@ -40,6 +41,10 @@ const routes: Routes = [
 				path: 'lehrer/:id',
 				component: LehrerEditComponent
 			},
+			{
+				path: 'schueler',
+				component: SchuelerListeComponent
+			}
 		],
 		canActivate: [LoginGuard]
 	},

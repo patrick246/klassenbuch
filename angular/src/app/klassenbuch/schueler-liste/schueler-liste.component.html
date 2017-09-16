@@ -1,0 +1,24 @@
+<div class="container-fluid mt-3">
+	<a class="btn btn-light m-3" routerLink="/class/new"><i class="fa fa-plus"></i> Neue Klasse</a>
+	<table class="table table-striped table-sm">
+		<thead class="thead-inverse">
+		<tr>
+			<th>Stufe</th>
+			<th>Name</th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let _schueler of schueler">
+			<td>{{_schueler.vorname}}</td>
+			<td>{{_schueler.nachname}}</td>
+			<td class="btn-group float-right">
+				<a class="btn btn-light" [routerLink]="[schueler.id]"><i class="fa fa-pencil"></i></a>
+				<button type="button" class="btn btn-light" (click)="deleteSchueler(_schueler)"><i class="fa fa-trash"></i>
+				</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+

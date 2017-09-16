@@ -18,6 +18,8 @@ import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {UUIDService} from "./uuid.service";
+import { SchuelerListeComponent } from './klassenbuch/schueler-liste/schueler-liste.component';
+import {SchuelerService} from "./schueler.service";
 
 @NgModule({
 	declarations: [
@@ -29,7 +31,8 @@ import {UUIDService} from "./uuid.service";
 		KlassenNewComponent,
 		LehrerComponent,
 		LehrerEditComponent,
-		LehrerNewComponent
+		LehrerNewComponent,
+		SchuelerListeComponent
 	],
 	imports: [
 		BrowserModule,
