@@ -59,7 +59,6 @@ export class LehrerService {
 	public removeLehrer(lehrer: Lehrer): Observable<Lehrer[]> {
 		let index = this.lehrerDb.findIndex(k => k.id === lehrer.id);
 		if (index > -1) {
-			let Lehrer = this.lehrerDb[index];
 			this.lehrerDb.splice(index, 1);
 			this.save();
 			return Observable.of(this.lehrerDb);

@@ -20,5 +20,13 @@ export class LehrerComponent implements OnInit {
 			this.lehrers = lehrer;
 		})
 	}
+
+	deleteTeacher(lehrer: Lehrer) {
+		if (confirm(`Möchten Sie wirklich den Lehrer ${lehrer.firstName} ${lehrer.lastName} löschen?`)) {
+			this.lehrerService.removeLehrer(lehrer).subscribe(lehrerList => {
+				this.lehrers = lehrerList;
+			});
+		}
+	}
 }
 
