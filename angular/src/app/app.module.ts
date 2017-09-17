@@ -24,7 +24,7 @@ import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen
 import {NotizenService} from "./klassenbuch/notizen/notizen.service";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
-//import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.component';
+import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.component';
 
 
 @NgModule({
@@ -41,8 +41,8 @@ import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-e
 		SchuelerListeComponent,
 		NotizenListeComponent,
 		NotizenNewComponent,
-		NotizenEditComponent//,
-		//SchuelerNewComponent
+		NotizenEditComponent,
+		SchuelerNewComponent
 	],
 	imports: [
 		BrowserModule,
