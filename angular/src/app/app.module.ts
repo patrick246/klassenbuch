@@ -18,14 +18,16 @@ import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {UUIDService} from "./uuid.service";
-import {SchuelerListeComponent} from './klassenbuch/schueler-liste/schueler-liste.component';
+import {SchuelerListeComponent} from "./klassenbuch/schueler-liste/schueler-liste.component";
 import {SchuelerService} from "./schueler.service";
 import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
 import {NotizenService} from "./klassenbuch/notizen/notizen.service";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
-import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.component';
-import { SchuelerEditComponent } from './schueler-edit/schueler-edit.component';
+import {SchuelerNewComponent} from "./klassenbuch/schueler-new/schueler-new.component";
+import {SchuelerEditComponent} from "./schueler-edit/schueler-edit.component";
+import {DashboardComponent} from "./klassenbuch/dashboard/dashboard.component";
+import {QuickNotizComponent} from "./klassenbuch/dashboard/quick-notiz/quick-notiz.component";
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { SchuelerEditComponent } from './schueler-edit/schueler-edit.component';
 		NotizenNewComponent,
 		NotizenEditComponent,
 		SchuelerNewComponent,
-		SchuelerEditComponent
+		SchuelerEditComponent,
+		DashboardComponent,
+		QuickNotizComponent
 	],
 	imports: [
 		BrowserModule,

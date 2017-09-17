@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {SchuelerService} from "../../schueler.service";
 import {Schueler} from "../../schueler";
 import {KlassenService} from "../../klassen.service";
@@ -26,17 +26,14 @@ export class SchuelerListeComponent implements OnInit {
 				schueler.map(async (_schueler) => {
 					if(_schueler.klasse == "" || _schueler.klasse == null){
 						return {
-							vorname: _schueler.vorname,
-							nachname: _schueler.nachname,
+							..._schueler,
 							klasse: null
 						};
 					}
-					let _klasse = await this.klassenService.getKlasse(_schueler.klasse).toPromise();
+					let klasse = await this.klassenService.getKlasse(_schueler.klasse).toPromise();
 					return {
-						id: _schueler.id,
-						vorname: _schueler.vorname,
-						nachname: _schueler.nachname,
-						klasse: _klasse
+						..._schueler,
+						klasse
 					};
 				})
 			).then(result => {
@@ -49,7 +46,7 @@ export class SchuelerListeComponent implements OnInit {
 
 	public
 	deleteSchueler(schueler: Schueler): void {
-		if (confirm(`Möchten Sie die Klasse ${schueler.vorname} ${schueler.nachname} wirklich löschen?`) === false
+		if (confirm(`Möchten Sie den Schüler ${schueler.vorname} ${schueler.nachname} wirklich löschen?`) === false
 		)
 			return;
 		this.schuelerService.deleteSchueler(schueler).subscribe(
