@@ -1,0 +1,29 @@
+<div class="container-fluid mt-3" *ngIf="error !== null">
+	<div class="alert alert-danger">
+		{{error}}
+	</div>
+</div>
+<div class="container-fluid mt-3" *ngIf="schueler !== null">
+	<form #schuelerForm="ngForm">
+		<div class="form-group">
+			<label for="firstname">Vorname</label>
+			<input type="text" class="form-control" id="firstname" [(ngModel)]="schueler.vorname" name="firstname" required>
+		</div>
+		<div class="form-group">
+			<label for="lastname">Nachname</label>
+			<input type="text" class="form-control" id="lastname" [(ngModel)]="schueler.nachname" name="lastname" required>
+		</div>
+		<div class="form-group">
+			<label for="klasse">Klasse</label>
+			<select id="klasse" [(ngModel)]="schueler.klasse" class="form-control" name="klasse" required>
+				<option *ngFor="let klasse of klassenListe" [ngValue]="klasse.id">{{klasse.stufe}} {{klasse.name}}
+				</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-primary" (click)="save()" [disabled]="!schuelerForm.valid">Speichern
+			</button>
+			<a class="btn btn-default btn-outline-primary" routerLink="/schueler">Abbrechen</a>
+		</div>
+	</form>
+</div>

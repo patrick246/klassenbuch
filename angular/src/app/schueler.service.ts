@@ -45,7 +45,8 @@ export class SchuelerService {
 	}
 
 	public addSchueler(schueler: Schueler): Observable<Schueler> {
-		if (this.schuelerDb.find(s => s.id === schueler.id)) {
+		if(schueler.id == "" || schueler.id == null) schueler.id = this.uuidService.uuidv4();
+		else if (this.schuelerDb.find(s => s.id === schueler.id)) {
 			return Observable.throw(new Error('Dieser Schueler existiert bereits'));
 		}
 		this.schuelerDb.push(schueler);
