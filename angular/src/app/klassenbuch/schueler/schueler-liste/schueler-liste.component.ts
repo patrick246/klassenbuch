@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {SchuelerService} from "../../schueler.service";
-import {Schueler} from "../../schueler";
-import {KlassenService} from "../../klassen.service";
+import {SchuelerService} from "../schueler.service";
+import {KlassenService} from "../../klassen/klassen.service";
+import {Schueler} from "../schueler";
+
 
 @Component({
 	selector: 'app-schueler-liste',

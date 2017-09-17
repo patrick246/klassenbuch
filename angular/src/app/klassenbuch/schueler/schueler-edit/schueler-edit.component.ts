@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {KlassenService} from "../klassen.service";
+import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Klasse} from "../../klassen/klasse";
+import {KlassenService} from "../../klassen/klassen.service";
 import {SchuelerService} from "../schueler.service";
-import {Klasse} from "../klasse";
 
 @Component({
   selector: 'app-schueler-edit',
@@ -21,7 +21,7 @@ export class SchuelerEditComponent implements OnInit {
 
 		this.klassenService.getKlassen().subscribe(klasse => {
 			this.klassenListe = klasse;
-		})
+		});
 
 		this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
 			let id = paramMap.get('id');

@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {KlassenService} from "../../klassen.service";
-import {Klasse} from "../../klasse";
+import {Klasse} from "../klasse";
+import {KlassenService} from "../klassen.service";
+
 
 @Component({
 	selector: 'app-klassen-liste',

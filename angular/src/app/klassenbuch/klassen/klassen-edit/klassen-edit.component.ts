@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {Klasse} from "../../klasse";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {KlassenService} from "../../klassen.service";
+import {Klasse} from "../klasse";
+import {KlassenService} from "../klassen.service";
+
 
 @Component({
 	selector: 'app-klassen-edit',

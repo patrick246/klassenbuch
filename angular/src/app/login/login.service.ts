@@ -3,7 +3,7 @@ import {User} from "./user";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/observable/of";
 import "rxjs/add/observable/throw";
-import {LehrerService} from "./lehrer/lehrer.service";
+import {LehrerService} from "../klassenbuch/lehrer/lehrer.service";
 
 @Injectable()
 export class LoginService {

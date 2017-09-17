@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Schueler} from "../../schueler";
-import {SchuelerService} from "../../schueler.service";
+import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
-import {KlassenService} from "../../klassen.service";
-import {Klasse} from "../../klasse";
+import {Schueler} from "../schueler";
+import {Klasse} from "../../klassen/klasse";
+import {KlassenService} from "../../klassen/klassen.service";
+import {SchuelerService} from "../schueler.service";
 
 @Component({
   selector: 'app-schueler-new',

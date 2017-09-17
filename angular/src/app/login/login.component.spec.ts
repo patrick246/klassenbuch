@@ -3,8 +3,8 @@ import {async, ComponentFixture, fakeAsync, TestBed, tick} from "@angular/core/t
 import {LoginComponent} from "./login.component";
 import {By} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
-import {LoginService} from "../login.service";
-import {User} from "../user";
+import {LoginService} from "./login.service";
+import {User} from "./user";
 import {Observable} from "rxjs";
 import {RouterTestingModule} from "@angular/router/testing";
 

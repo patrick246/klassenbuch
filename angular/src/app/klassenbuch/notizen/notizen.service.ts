@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Notiz, notizReviver} from "./Notiz";
 import {Observable} from "rxjs";
-import {Schueler} from "../../schueler";
-import {Lehrer} from "../../lehrer/lehrer";
+import {Schueler} from "../schueler/schueler";
+import {Lehrer} from "../lehrer/lehrer";
 import {UUIDService} from "../../uuid.service";
 
 @Injectable()

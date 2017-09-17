@@ -1,8 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {Schueler} from "../../../schueler";
-import {Lehrer} from "../../../lehrer/lehrer";
-import {SchuelerService} from "../../../schueler.service";
-import {LehrerService} from "../../../lehrer/lehrer.service";
+import {Schueler} from "../../schueler/schueler";
+import {Lehrer} from "../../lehrer/lehrer";
+import {SchuelerService} from "../../schueler/schueler.service";
+import {LehrerService} from "../../lehrer/lehrer.service";
 import {NotizenService} from "../notizen.service";
 import {Router} from "@angular/router";
 

@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Lehrer} from "./lehrer";
-import {UUIDService} from "../uuid.service";
+import {UUIDService} from "../../uuid.service";
 
 @Injectable()
 export class LehrerService {
