@@ -13,13 +13,13 @@ export class SchuelerService {
 				id: uuidService.uuidv4(),
 				vorname: "Muster",
 				nachname: "Maxmann",
-				klasse: ""
+				klasse: null
 			},
 			{
 				id: uuidService.uuidv4(),
 				vorname: "Max",
 				nachname: "Mustermann",
-				klasse: ""
+				klasse: null
 			}
 		];
 
