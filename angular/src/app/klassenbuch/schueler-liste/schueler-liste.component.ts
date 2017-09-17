@@ -19,18 +19,19 @@ export class SchuelerListeComponent implements OnInit {
 	}
 
 	private loadSchueler(): void {
-		console.log('start');
+
 		this.schuelerService.getSchueler().subscribe((schueler) => {
-			console.log(schueler);
-			console.log('test');
+
 			Promise.all(
 				schueler.map(async (_schueler) => {
-					console.log(_schueler);
-					console.log('log');
-					console.log(this.schueler);
+					if(_schueler.klasse == "" || _schueler.klasse == null){
+						return {
+							vorname: _schueler.vorname,
+							nachname: _schueler.nachname,
+							klasse: null
+						};
+					}
 					let _klasse = await this.klassenService.getKlasse(_schueler.klasse).toPromise();
-
-					console.log(_schueler.klasse, _schueler.vorname);
 					return {
 						vorname: _schueler.vorname,
 						nachname: _schueler.nachname,
