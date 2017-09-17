@@ -9,18 +9,7 @@ export class SchuelerService {
 
 	constructor(private uuidService: UUIDService) {
 		this.schuelerDb = [
-			{
-				id: uuidService.uuidv4(),
-				vorname: "Muster",
-				nachname: "Maxmann",
-				klasse: null
-			},
-			{
-				id: uuidService.uuidv4(),
-				vorname: "Max",
-				nachname: "Mustermann",
-				klasse: null
-			}
+
 		];
 
 		let schueler = localStorage.getItem('klassenbuch_schueler');
@@ -45,7 +34,7 @@ export class SchuelerService {
 	}
 
 	public addSchueler(schueler: Schueler): Observable<Schueler> {
-		if(schueler.id == "" || schueler.id == null) schueler.id = this.uuidService.uuidv4();
+		if(schueler.id == "" || schueler.id == null) { schueler.id = this.uuidService.uuidv4(); }
 		else if (this.schuelerDb.find(s => s.id === schueler.id)) {
 			return Observable.throw(new Error('Dieser Schueler existiert bereits'));
 		}
