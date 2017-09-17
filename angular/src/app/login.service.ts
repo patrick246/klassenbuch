@@ -3,29 +3,14 @@ import {User} from "./user";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/observable/of";
 import "rxjs/add/observable/throw";
+import {LehrerService} from "./lehrer/lehrer.service";
 
 @Injectable()
 export class LoginService {
-
-	private userDb: User[] = [
-		{
-			username: 'admin',
-			fullName: 'Administrator',
-			password: 'admin'
-		}
-	];
-
 	private loggedIn: boolean = false;
 	private currentUser: User = null;
 
-	constructor() {
-		let users = localStorage.getItem('klassenbuch_users');
-		if (users !== null) {
-			this.userDb = JSON.parse(users);
-		} else {
-			localStorage.setItem('klassenbuch_users', JSON.stringify(this.userDb));
-		}
-
+	constructor(private lehrerService: LehrerService) {
 		let loggedIn = localStorage.getItem('klassenbuch_login');
 		if (loggedIn !== null) {
 			this.loggedIn = JSON.parse(loggedIn);
@@ -48,14 +33,19 @@ export class LoginService {
 	}
 
 	public login(username: string, password: string): Observable<User> {
-		let user = this.userDb.find(user => user.username === username);
-		if (user && user.password === password) {
-			this.loggedIn = true;
-			this.currentUser = user;
-			this.save();
-			return Observable.of(user);
-		}
-		return Observable.throw(new Error('User/Password combination not found'));
+		return this.lehrerService.getLehrerByLogin(username).map(lehrer => {
+			if (lehrer.password === password) {
+				this.loggedIn = true;
+				let user = {
+					username: lehrer.loginName,
+					fullName: `${lehrer.firstName} ${lehrer.lastName}`
+				};
+				this.currentUser = user;
+				this.save();
+				return user;
+			}
+			return Observable.throw(new Error('User/Password combination not found'));
+		});
 	}
 
 	public logout(): void {

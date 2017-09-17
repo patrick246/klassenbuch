@@ -4,4 +4,6 @@ export interface Lehrer {
 	lastName: string;
 	mail: string;
 	role: string;
+	loginName: string;
+	password: string;
 }

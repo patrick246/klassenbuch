@@ -1,23 +1,36 @@
 <div class="container-fluid mt-3" *ngIf="klasse !== null">
-	<form #classForm="ngForm">
+	<form #lehrerForm="ngForm">
 		<div class="form-group">
 			<label for="firstName">Vorname</label>
-			<input type="text" class="form-control" id="firstName" [(ngModel)]="lehrer.firstName" name="firstName">
+			<input type="text" class="form-control" id="firstName" [(ngModel)]="lehrer.firstName" name="firstName"
+			       required>
 		</div>
 		<div class="form-group">
 			<label for="lastName">Nachname</label>
-			<input type="text" class="form-control" id="lastName" [(ngModel)]="lehrer.lastName" name="lastName">
+			<input type="text" class="form-control" id="lastName" [(ngModel)]="lehrer.lastName" name="lastName"
+			       required>
 		</div>
 		<div class="form-group">
 			<label for="mail">E-mail Adresse</label>
-			<input type="text" class="form-control" id="mail" [(ngModel)]="lehrer.mail" name="mail">
+			<input type="text" class="form-control" id="mail" [(ngModel)]="lehrer.mail" name="mail" required>
 		</div>
 		<div class="form-group">
 			<label for="role">Position</label>
 			<input type="text" class="form-control" id="role" [(ngModel)]="lehrer.role" name="role">
 		</div>
 		<div class="form-group">
-			<button type="button" class="btn btn-primary" (click)="save()">Speichern</button>
+			<label for="loginName">Username</label>
+			<input type="text" class="form-control" id="loginName" [(ngModel)]="lehrer.loginName" name="loginName"
+			       required>
+		</div>
+		<div class="form-group">
+			<label for="password">Passwort</label>
+			<input type="password" class="form-control" id="password" [(ngModel)]="lehrer.password" name="password"
+			       required>
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-primary" (click)="save()" [disabled]="!lehrerForm.valid">Speichern
+			</button>
 			<a class="btn btn-default btn-outline-primary" routerLink="/teacher">Abbrechen</a>
 		</div>
 	</form>
