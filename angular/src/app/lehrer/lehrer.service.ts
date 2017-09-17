@@ -15,7 +15,9 @@ export class LehrerService {
 				firstName: 'Test',
 				lastName: 'Lehrer',
 				mail: 'test.lehrer@schule.example.com',
-				role: ''
+				role: '',
+				loginName: 'test.lehrer',
+				password: 'test'
 			}
 		];
 
@@ -33,6 +35,14 @@ export class LehrerService {
 
 	public getOneLehrer(id: string): Observable<Lehrer> {
 		let lehrer = this.lehrerDb.find(k => k.id === id);
+		if (lehrer) {
+			return Observable.of(lehrer);
+		}
+		return Observable.throw(new Error('Lehrer nicht gefunden'));
+	}
+
+	public getLehrerByLogin(loginName: string): Observable<Lehrer> {
+		let lehrer = this.lehrerDb.find(l => l.loginName === loginName);
 		if (lehrer) {
 			return Observable.of(lehrer);
 		}

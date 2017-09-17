@@ -14,7 +14,9 @@ export class LehrerNewComponent implements OnInit {
 		firstName: '',
 		lastName: '',
 		mail: '',
-		role: ''
+		role: '',
+		loginName: '',
+		password: ''
 	};
 
 	constructor(private router: Router, private lehrerService: LehrerService) {
