@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { SchuelerService } from "../../schueler.service";
-import { Schueler } from "../../schueler";
+import {Component, OnInit} from '@angular/core';
+import {SchuelerService} from "../../schueler.service";
+import {Schueler} from "../../schueler";
+import {KlassenService} from "../../klassen.service";
 
 @Component({
-  selector: 'app-schueler-liste',
-  templateUrl: './schueler-liste.component.html',
-  styleUrls: ['./schueler-liste.component.css']
+	selector: 'app-schueler-liste',
+	templateUrl: './schueler-liste.component.html',
+	styleUrls: ['./schueler-liste.component.css']
 })
 export class SchuelerListeComponent implements OnInit {
-	schueler: Schueler[];
+	schueler: any;
 
-	constructor(private schuelerService: SchuelerService) {
+	constructor(private schuelerService: SchuelerService, private klassenService: KlassenService) {
 	}
 
 	ngOnInit() {
@@ -18,18 +19,37 @@ export class SchuelerListeComponent implements OnInit {
 	}
 
 	private loadSchueler(): void {
-		this.schuelerService.getSchueler().subscribe(schueler => {
-			this.schueler = schueler.sort((schueler1: Schueler, schueler2: Schueler): number => {
-				if (schueler1.nachname === schueler2.nachname) {
-					return schueler1.vorname.localeCompare(schueler2.vorname);
-				}
-				return schueler1.nachname.localeCompare(schueler2.nachname);
+		console.log('start');
+		this.schuelerService.getSchueler().subscribe((schueler) => {
+			console.log(schueler);
+			console.log('test');
+			Promise.all(
+				schueler.map(async (_schueler) => {
+					console.log(_schueler);
+					console.log('log');
+					console.log(this.schueler);
+					let _klasse = await this.klassenService.getKlasse(_schueler.klasse).toPromise();
+
+					console.log(_schueler.klasse, _schueler.vorname);
+					return {
+						vorname: _schueler.vorname,
+						nachname: _schueler.nachname,
+						klasse: _klasse
+					};
+				})
+			).then(result => {
+				this.schueler = result;
 			});
 		});
+
 	}
 
-	public deleteSchueler(schueler: Schueler): void {
-		if (confirm(`Möchten Sie die Klasse ${schueler.vorname}${schueler.nachname} wirklich löschen?`) === false) return;
+
+	public
+	deleteSchueler(schueler: Schueler): void {
+		if (confirm(`Möchten Sie die Klasse ${schueler.vorname}${schueler.nachname} wirklich löschen?`) === false
+		)
+			return;
 		this.schuelerService.deleteSchueler(schueler).subscribe(
 			() => {
 				this.loadSchueler();

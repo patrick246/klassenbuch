@@ -18,16 +18,13 @@ import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {UUIDService} from "./uuid.service";
-<<<<<<< HEAD
-import { SchuelerListeComponent } from './klassenbuch/schueler-liste/schueler-liste.component';
+import {SchuelerListeComponent} from './klassenbuch/schueler-liste/schueler-liste.component';
 import {SchuelerService} from "./schueler.service";
-=======
 import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
 import {NotizenService} from "./klassenbuch/notizen/notizen.service";
-import {SchuelerService} from "./schueler.service";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
->>>>>>> refs/remotes/origin/master
+
 
 @NgModule({
 	declarations: [
@@ -40,13 +37,10 @@ import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-e
 		LehrerComponent,
 		LehrerEditComponent,
 		LehrerNewComponent,
-<<<<<<< HEAD
-		SchuelerListeComponent
-=======
+		SchuelerListeComponent,
 		NotizenListeComponent,
 		NotizenNewComponent,
 		NotizenEditComponent
->>>>>>> refs/remotes/origin/master
 	],
 	imports: [
 		BrowserModule,
