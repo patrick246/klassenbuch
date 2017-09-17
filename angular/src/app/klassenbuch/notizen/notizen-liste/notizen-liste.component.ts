@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {NotizenService} from "../notizen.service";
-import {SchuelerService} from "../../../schueler.service";
-import {LehrerService} from "../../../lehrer/lehrer.service";
+import {SchuelerService} from "../../schueler/schueler.service";
+import {LehrerService} from "../../lehrer/lehrer.service";
 
 @Component({
 	selector: 'app-notizen-liste',

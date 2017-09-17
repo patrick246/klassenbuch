@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {Notiz} from "../Notiz";
-import {Schueler} from "../../../schueler";
-import {Lehrer} from "../../../lehrer/lehrer";
-import {SchuelerService} from "../../../schueler.service";
-import {LehrerService} from "../../../lehrer/lehrer.service";
+import {Schueler} from "../../schueler/schueler";
+import {Lehrer} from "../../lehrer/lehrer";
+import {SchuelerService} from "../../schueler/schueler.service";
+import {LehrerService} from "../../lehrer/lehrer.service";
 import {NotizenService} from "../notizen.service";
 import {ActivatedRoute, Router} from "@angular/router";
 

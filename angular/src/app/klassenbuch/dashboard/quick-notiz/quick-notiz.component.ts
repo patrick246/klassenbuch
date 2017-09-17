@@ -1,10 +1,10 @@
 import {Component, OnInit} from "@angular/core";
-import {KlassenService} from "../../../klassen.service";
-import {Klasse} from "../../../klasse";
-import {SchuelerService} from "../../../schueler.service";
-import {Schueler} from "../../../schueler";
-import {Lehrer} from "../../../lehrer/lehrer";
-import {LehrerService} from "../../../lehrer/lehrer.service";
+import {KlassenService} from "../../klassen/klassen.service";
+import {Klasse} from "../../klassen/klasse";
+import {SchuelerService} from "../../schueler/schueler.service";
+import {Schueler} from "../../schueler/schueler";
+import {Lehrer} from "../../lehrer/lehrer";
+import {LehrerService} from "../../lehrer/lehrer.service";
 import {NotizenService} from "../../notizen/notizen.service";
 import {Router} from "@angular/router";
 
