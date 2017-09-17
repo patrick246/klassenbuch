@@ -49,7 +49,7 @@ export class SchuelerListeComponent implements OnInit {
 
 	public
 	deleteSchueler(schueler: Schueler): void {
-		if (confirm(`Möchten Sie die Klasse ${schueler.vorname}${schueler.nachname} wirklich löschen?`) === false
+		if (confirm(`Möchten Sie die Klasse ${schueler.vorname} ${schueler.nachname} wirklich löschen?`) === false
 		)
 			return;
 		this.schuelerService.deleteSchueler(schueler).subscribe(
