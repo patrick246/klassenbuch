@@ -24,11 +24,9 @@ import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen
 import {NotizenService} from "./klassenbuch/notizen/notizen.service";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
-import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.component';
+import {SchuelerNewComponent} from "./klassenbuch/schueler-new/schueler-new.component";
 import {DashboardComponent} from "./klassenbuch/dashboard/dashboard.component";
 import {QuickNotizComponent} from "./klassenbuch/dashboard/quick-notiz/quick-notiz.component";
-import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.component';
-
 
 
 @NgModule({
@@ -46,7 +44,6 @@ import {SchuelerNewComponent} from './klassenbuch/schueler-new/schueler-new.comp
 		NotizenListeComponent,
 		NotizenNewComponent,
 		NotizenEditComponent,
-    schueler-service,
 		SchuelerNewComponent,
 		DashboardComponent,
 		QuickNotizComponent,
