@@ -16,6 +16,7 @@ import {SchuelerEditComponent} from "./schueler-edit/schueler-edit.component";
 import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
+import {DashboardComponent} from "./klassenbuch/dashboard/dashboard.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
 		path: '',
 		component: KlassenbuchComponent,
 		children: [
+			{
+				path: '',
+				component: DashboardComponent
+			},
 			{
 				path: 'notes',
 				component: NotizenListeComponent
