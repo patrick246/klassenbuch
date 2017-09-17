@@ -33,6 +33,7 @@ export class SchuelerListeComponent implements OnInit {
 					}
 					let _klasse = await this.klassenService.getKlasse(_schueler.klasse).toPromise();
 					return {
+						id: _schueler.id,
 						vorname: _schueler.vorname,
 						nachname: _schueler.nachname,
 						klasse: _klasse
