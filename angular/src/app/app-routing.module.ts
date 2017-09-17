@@ -11,7 +11,7 @@ import {LehrerEditComponent} from "./lehrer/lehrer-edit/lehrer-edit.component";
 import {LehrerNewComponent} from "./lehrer/lehrer-new/lehrer-new.component";
 import {LehrerComponent} from "./lehrer/lehrer.component";
 import {SchuelerListeComponent} from "./klassenbuch/schueler-liste/schueler-liste.component";
-import {SchuelerNewComponent} from "./klassenbuch/schueler-new/schueler-new.component";
+//import {SchuelerNewComponent} from "./klassenbuch/schueler-new/schueler-new.component";
 import {NotizenListeComponent} from "./klassenbuch/notizen/notizen-liste/notizen-liste.component";
 import {NotizenNewComponent} from "./klassenbuch/notizen/notizen-new/notizen-new.component";
 import {NotizenEditComponent} from "./klassenbuch/notizen/notizen-edit/notizen-edit.component";
@@ -62,10 +62,10 @@ const routes: Routes = [
 				path: 'schueler',
 				component: SchuelerListeComponent
 			},
-			{
-				path: 'schueler/new',
-				component: SchuelerNewComponent
-			}
+			//{
+			//	path: 'schueler/new',
+			//	component: SchuelerNewComponent
+		//	}
 		],
 		canActivate: [LoginGuard]
 	},
